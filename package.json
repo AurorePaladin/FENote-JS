@@ -1,0 +1,23 @@
+{
+  "name": "fenote-js",
+  "version": "1.0.0",
+  "description": "前端学习笔记-JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AurorePaladin/FENote-JS.git"
+  },
+  "author": "AurorePaladin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AurorePaladin/FENote-JS/issues"
+  },
+  "homepage": "https://github.com/AurorePaladin/FENote-JS#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1"
+  }
+}
