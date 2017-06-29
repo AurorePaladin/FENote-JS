@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>第一题</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var num = parseInt(prompt("请输入一个数字"));
+      if(num % 5 == 0 && num % 6 == 0){
+			alert("能被5、6同时整除");
+		}else if(num % 5 == 0){
+			alert("能被5整除，但6不");
+		}else if(num % 6 == 0){
+			alert("能被6整除，但5不");
+		}else{
+			alert("被5、6都不能");
+		}
+
+    </script>
+  </body>
+</html>
