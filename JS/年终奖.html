@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var year =parseFloat(prompt("请输入您的工龄"));
+      var cash =parseInt(prompt("请输入您的月薪"));
+      if (year < 1) {
+        if (cash <= 8000) {
+            alert("您的年终奖是"+ cash * 1);
+            }else {
+            alert("您的年终奖是"+ cash * 1.2);
+            }
+      }else if (year < 2) {
+        if(cash <=10000) {
+              alert("您的年终奖是"+ cash * 1.5);
+              }else {
+              alert("您的年终奖是"+ cash * 1.7);
+              }
+      }else if (year >= 2) {
+        if(cash <= 12000) {
+              alert("您的年终奖是"+ cash * 3);
+            }else {
+              alert("您的年终奖是"+ cash * 3.2);
+            }
+      }
+
+    </script>
+  </body>
+</html>
