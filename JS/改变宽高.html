@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #demo {
+        width: 300px;
+        height: 400px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <button id="apd1">变色</button>
+    <button id="apd2">变长</button>
+    <button id="apd3">变矮</button>
+
+    <script>
+      var dem = document.getElementById("demo");
+      var ap1 = document.getElementById("apd1");
+      var ap2 = document.getElementById("apd2");
+      var ap3 = document.getElementById("apd3");
+      ap1.onclick = function(){
+        dem.style.backgroundColor = "red";
+      }
+      ap2.onclick = function(){
+        dem.style.width = "600px";
+      }
+      ap3.onclick = function(){
+          dem.style.height = "200px";
+        }
+
+
+    </script>
+  </body>
+</html>
