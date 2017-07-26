@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .advert {
+        width: 331px;
+        height: 195px;
+        background: url(../../FENote-CSS/CSS01/images/pro3.jpg) repeat;
+        position: relative;
+      }
+     .close {
+       position: absolute;
+       right:10px;
+       top: 10px;
+     }
+     .mm {
+       height: 200px;
+       width: 100%;
+       background-color: pink;
+     }
+    </style>
+  </head>
+  <body>
+     <div class="advert" id="demo">
+        <button class="close" id="apd">X</button>
+    </div>
+    <div class="mm"></div>
+    <script type="text/javascript">
+      var demo = document.getElementById("demo");
+      var apd = document.getElementById("apd");
+      apd.onclick = function(){
+        demo.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
