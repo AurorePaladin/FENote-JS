@@ -1,0 +1,340 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+textarea {
+    resize: none;
+}
+
+/*防止拖动*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse: collapse;
+}
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";
+    color: #666;
+    background: #fff
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+.col-red {
+    color: #C81623 !important;
+}
+
+/*公共类*/
+.w {
+  width: 1920px;
+  height: 960px;
+  border-bottom: 1px solid #eee
+}
+/*左侧头部*/
+.info {
+  float: left;
+  width: 199px;
+  height: 960px;
+  border-right: 1px solid #eee;
+}
+.self-in {
+  width: 199px;
+  height: 231px;
+}
+.avatar {
+  width: 70px;
+  height: 70px;
+  margin-top: 60px;
+  margin-left: 65px;
+  background: url(../images/favicon.ico) ;
+}
+.name {
+  height: 42px;
+}
+.name p {
+  font:400 13px/42px "宋体";
+  color: #4b595f;
+  text-align:center;
+}
+.signature {
+  height: 18px;
+  margin: 0 0 20px 0;
+}
+.signature p {
+  font:400 13px/18px "宋体";
+  color: #849aa4;
+  text-align: center;
+}
+.weibo {
+  float: left;
+  width: 26px;
+  height: 20px;
+  background: url(../images/weibo.jpg) no-repeat;
+  margin-left: 67px;
+}
+.weibo-a {
+  display: block;
+  width: 26px;
+  height: 20px;
+  text-indent: -3000em;
+}
+.git {
+  float: left;
+  width: 20px;
+  height: 20px;
+  background: url(../images/git.jpg) no-repeat;
+  margin-left: 20px;
+}
+.git-a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  text-indent: -3000em;
+}
+/*左侧导航栏*/
+.zone {
+  width: 199px;
+  height: 240px;
+}
+.zone .zone-bg {
+  width:100%;
+  height: 60px;
+  background-color: #e5f1fc;
+  margin-top: 28px;
+  text-align: center;
+}
+.zone .zone-bg #bg-me {
+  font:400 16px/60px "simsun" ;
+  color: #3593f2;
+}
+.zone .zone-gh {
+  width: 100%;
+  height: 19px;
+  margin-top: 51px;
+  text-align: center;
+}
+.zone .zone-gh #git-hb {
+  font:400 16px/19px "simsun" ;
+  color: #4b595f;
+}
+.zone .zone-am {
+  width: 100%;
+  height: 19px;
+  margin-top: 69px;
+  text-align: center;
+}
+.zone .zone-am #ab-me {
+  font: 400 16px/19px "simsun";
+  color: #4b595f;
+}
+/*左侧足部*/
+.bot-info {
+  width: 199px;
+  height: 401px;
+}
+.bot-info .ad {
+  width: 199px;
+  height: 40px;
+  margin-top: 201px;
+}
+.bot-info .ad #s1{
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  background-color: pink;
+}
+.bot-info .ad #xl {
+  font:400 12px/20px "simsun";
+  color: #4b595f;
+}
+.bot-info .ad #s2 {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+}
+.bot-info .ad #q-club {
+  font:400 12px/15px "simsun";
+  color: #849aa4;
+}
+.ewm {
+  width: 90px;
+  height: 90px;
+  background: url(../images/qqclub.jpg) no-repeat;
+  margin: 12px 55px 14px;
+}
+.add {
+  width: 99px;
+  height: 16px;
+  margin: 0 48px 53px 51px;
+}
+
+/*左侧部分全部结束*/
+
+
+/*头部标签页开始*/
+.shortcut {
+  float: right;
+  width: 1720px;
+  height: 960px;
+}
+.shortcut .lable_top {
+  width: 1720px;
+  height: 89px;
+  overflow: hidden;
+}
+.lable_mid {
+  width: 1720px;
+  height: 30px;
+  margin-top: 29px;
+}
+.lable_mid div {
+  float:left;
+  height: 30px;
+  margin-left: 24px;
+  font:400 14px/30px "微软雅黑";
+  color: #849aa4;
+  text-align: center;
+}
+.lable_mid .lable_1 {
+  margin-left: 50px;
+  width: 50px;
+  height: 30px;
+}
+.lable_mid .lable_2 {
+  width: 80px;
+  height: 30px;
+}
+.lable_mid .lable_3 {
+  width: 90px;
+  height: 30px;
+}
+.lable_mid .lable_4 {
+  width: 80px;
+  height: 30px;
+}
+.lable_mid .lable_5 {
+  width: 50px;
+  height: 30px;
+}
+.lable_mid .lable_6 {
+  width: 72px;
+  height: 30px;
+}
+.lable_mid .lable_7 {
+  width: 52px;
+  height: 30px;
+}
+.lable_mid .lable_8 {
+  width: 60px;
+  height: 30px;
+}
+.lable_mid .lable_9 {
+  width: 64px;
+  height: 30px;
+}
+.lable_mid .lable_10 {
+  width: 80px;
+  height: 30px;
+}
+.lable_mid .lable_11 {
+  width: 58px;
+  height: 30px;
+}
+.lable_mid .lable_12 {
+  width: 84px;
+  height: 30px;
+}
+.lable_mid .lable_13 {
+  width: 84px;
+  height: 30px;
+}
+.lable_mid .lable_14 {
+  width: 84px;
+  height: 30px;
+}
+.lable_mid .lable_15 {
+  width: 84px;
+  height: 30px;
+}
+
+
+.lable_lable {
+  width: 1720px;
+  height: 50px;
+  background-color: #f9fafc;
+}
+.lable_lable div {
+  float: left;
+  font:400 12px/50px "宋体";
+  color: #a3b4bc;
+}
+.lable_lable .lable_name {
+  margin: 0 521px 0 50px;
+}
+.lable_lable .lable_h {
+  margin-right: 814px;
+}
