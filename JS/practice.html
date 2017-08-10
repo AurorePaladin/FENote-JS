@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>practice</title>
+    <style media="screen">
+      .body {
+        margin: 0 auto;
+        padding: 0;
+      }
+      .main li {
+        list-style: none;
+      }
+    </style>
+    <script>
+      /* window.onload =function(){
+        var btns = document.getElementsByTagName("button");
+        var ipts = document.getElementById("lal").getElementsByTagName("input");
+        btns[0].onclick = function(){
+          for (var i = 0; i < ipts.length; i++) {
+            ipts[i].checked = true;
+          }
+        }
+        btns[1].onclick = function(){
+          for (var i = 0; i < ipts.length; i++) {
+            ipts[i].checked = false;
+          }
+        }
+        btns[2].onclick = function(){
+          for(var i = 0;i<ipts.length;i++){
+        if (ipts[i].checked == true) {
+          ipts[i].checked = false;
+        }
+        else {
+          ipts[i].checked = true;
+            }
+          }
+        }
+      } */
+      window.onload = function(){
+       var btns = document.getElementById("lal").getElementsByTagName("button");
+       var ipts = document.getElementById("lal").getElementsByTagName("input");
+      // window.onload =function(){
+      //   var btns = document.getElementsByTagName("button");
+      //   var ipts = document.getElementById("lal").getElementsByTagName("input");
+       function all(mark){
+         for(var i=0 ; i < ipts.length;i ++){
+           ipts[i].checked = mark;
+         }
+       }
+         btns[0].onclick = function(){
+           all(true);
+         }
+         btns[1].onclick = function(){
+           all(false);
+         }
+         btns[2].onclick = function(){
+           for(var i=0;i < ipts.length;i++){
+             ipts[i].checked == true ? ipts[i].checked = false : ipts[i].checked = true;
+           }
+         }
+       }
+
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <ur id="lal">
+        <button>全选</button>
+        <button>取消</button>
+        <button>反选</button>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+      </ur>
+    </div>
+  </body>
+</html>
