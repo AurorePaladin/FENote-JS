@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>parctice</title>
+    <style>
+     *{
+       margin: 0 auto;
+       padding: 0;
+     }
+     #box1 {
+       width: 300px;
+       height: 300px;
+       margin: auto;
+     }
+     #box1 #lala {
+       list-style:none;
+       font-size:12px;
+     }
+     *{
+       margin: 0;
+       padding: 0;
+     }
+     #haha {
+       margin: auto;
+       width: 300px;
+       height: 300px;
+     }
+     #haha #lala {
+       font-size: 12px;
+       list-style:none;
+     }
+    </style>
+    <script>
+      window.onload =function(){
+        var btns =document.getElementById("box1").getElementsByTagName("button");
+        var ipts =document.getElementById("lala").getElementsByTagName("input");
+        btns[0].onclick = function(){
+          for(var i=0;i<ipts.length;i++){
+            ipts[i].checked = false;
+          }
+        }
+        btns[1].onclick = function(){
+          for(var i=0;i<ipts.length;i++){
+            ipts[i].checked = true;
+          }
+        }
+        btns[2].onclick =function(){
+          for(var i=0;i<ipts.length;i++){
+            if (ipts[i].checked == true) {
+              ipts[i].checked = false;
+            }
+            else {
+              ipts[i].checked = true;
+            }
+          }
+        }
+          var btn1s = document.getElementById("haha").getElementsByTagName("button");
+          var ipt1s = document.getElementById("lala").getElementsByTagName("input");
+          function all(mark){
+              for(var i=0;i<ipt1s.length;i++){
+                ipt1s[i].checked = mark;
+              }
+            }
+            btn1s[0].onclick = function(){
+              all(false);
+            }
+            btn1s[1].onclick = function(){
+              all(true);
+            }
+          btn1s[2].onclick = function(){
+            for(var i=0;i<ipt1s.length;i++){
+              ipt1s[i].checked == true ? ipt1s.checked =false:ipt1s.checked = true;
+            }
+          }
+        }
+      //   function all(mark){
+      //    for(var i=0 ; i < iptrs.length;i ++){
+      //      iptrs[i].checked = mark;
+      //    }
+      //   }
+      //     btnrs[0].onclick = function(){
+      //       all(false);
+      //     }
+      //     btnrs[1].onclick = function(){
+      //       all(true);
+      //     }
+      //     btnrs[2].onclick = function(){
+      //       for(var i=0;i < iptrs.length;i++){
+      //         iptrs[i].checked == true ? iptrs[i].checked = false : iptrs[i].checked = true;
+      //       }
+      //     }
+      // }
+    </script>
+  </head>
+  <body>
+    <div id="box1">
+      <button>取消</button>
+      <button>全选</button>
+      <button>反选</button>
+      <ul id="lala">
+        <li>选择：<input type="checkbox"></li>
+        <li>选择：<input type="checkbox"></li>
+        <li>选择：<input type="checkbox"></li>
+        <li>选择：<input type="checkbox"></li>
+        <li>选择：<input type="checkbox"></li>
+        <li>选择：<input type="checkbox"></li>
+        <li>选择：<input type="checkbox"></li>
+        <li>选择：<input type="checkbox"></li>
+        <li>选择：<input type="checkbox"></li>
+        <li>选择：<input type="checkbox"></li>
+      </ul>
+    </div>
+    <div id="haha">
+      <button>取消</button>
+      <button>全选</button>
+      <button>反选</button>
+      <ul id="lala">
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+        <li>选择<input type="checkbox"></li>
+      </ul>
+    </div>
+  </body>
+</html>
