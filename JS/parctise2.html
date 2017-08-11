@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>parctise</title>
+    <style>
+      *{
+        margin: auto;
+        padding: 0;
+      }
+      ul{
+        list-style: none;
+        font-size: 12px;
+      }
+      .fff{
+        background-color: #aaa!important;
+      }
+    </style>
+    <script>
+      window.onload = function(){
+        var lis = document.getElementById("lala").getElementsByTagName("li");
+          for (var i = 0; i < lis.length; i++) {
+            if (i % 2 == 0) {
+              lis[i].style.backgroundColor = "#ddd";
+            }
+
+          lis[i].onmouseover = function(){
+            this.className = "fff";
+          }
+          lis[i].onmouseout = function(){
+            this.className = "";
+        }
+      }
+    }
+
+
+    </script>
+  </head>
+  <body>
+    <ul id="lala">
+      <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
+      <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
+      <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
+      <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
+      <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
+      <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
+      <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
+      <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
+      <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
+      <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
+    </ul>
+  </body>
+</html>
