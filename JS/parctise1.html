@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>排他性</title>
+    <style media="screen">
+      .haha{
+        background-color: violet;
+      }
+    </style>
+    <script>
+      window.onload = function(){
+        var btns = document.getElementsByTagName("button");
+        for(var i=0;i<btns.length;i++){
+          btns[i].onclick = function () {
+            for(var j=0;j<btns.length;j++){
+              btns[j].className = "";
+            }
+            this.className = "haha";
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+  </body>
+</html>
