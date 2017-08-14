@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Horoscope</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .box{
+        margin: auto;
+        margin-top:200px;
+        width: 300px;
+        height: 300px;
+        font: 700 12px/12px "simsun";
+      }
+     .top {
+       width: 100%;
+       height: 100px;
+     }
+     .top .icon {
+       float: left;
+       width: 50px;
+       height: 50px;
+       background: url(/Users/Aurore/Downloads/theron4.jpg);
+       background-position:top bottom 0 50px;
+     }
+     .top .date {
+       padding-left: 20px;
+     }
+     .top .date .star {
+       width: 80px;
+       height: 50px;
+       margin: 10px 0 0 40px;
+       background: url(/Users/Aurore/Downloads/theron4.jpg);
+       background-position: 400px -300px;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="box">星座运势
+      <div class="top">
+        <div class="icon" id="ico"></div>
+        <div class="date">
+          <select id="sele" >
+            <option value="0">双鱼座 02/19- 03/20</option>
+            <option value="1">白羊座 03/21 - 04/19 </option>
+            <option value="2">金牛座 04/20- 0520 </option>
+            <option value="3">双子座 05/21 - 06/20 </option>
+            <option value="4">巨蟹座 06/21- 07/22 </option>
+            <option value="5">狮子座 07/23 - 08/22 </option>
+            <option value="6">处女座 08/23 - 09/22 </option>
+            <option value="7">天秤座 09/23 - 10/22</option>
+            <option value="8">天蝎座 10/23 - 11/21 </option>
+            <option value="9">射手座 11/22 - 12/21 </option>
+            <option value="10">摩羯座 12/22 - 01/19 </option>
+            <option value="11">水瓶座 01/ 20- 02/18 </option>
+          </select>
+          <div class="star"></div>
+        </div>
+      </div>
+      <div class="bot" id="content">双鱼座内容</div>
+    </div>
+  </body>
+</html>
