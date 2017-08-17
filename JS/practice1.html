@@ -74,23 +74,23 @@
             }
           }
         }
-      //   function all(mark){
-      //    for(var i=0 ; i < iptrs.length;i ++){
-      //      iptrs[i].checked = mark;
-      //    }
-      //   }
-      //     btnrs[0].onclick = function(){
-      //       all(false);
-      //     }
-      //     btnrs[1].onclick = function(){
-      //       all(true);
-      //     }
-      //     btnrs[2].onclick = function(){
-      //       for(var i=0;i < iptrs.length;i++){
-      //         iptrs[i].checked == true ? iptrs[i].checked = false : iptrs[i].checked = true;
-      //       }
-      //     }
-      // }
+        function all(mark){
+         for(var i=0 ; i < iptrs.length;i ++){
+           iptrs[i].checked = mark;
+         }
+        }
+          btnrs[0].onclick = function(){
+            all(false);
+          }
+          btnrs[1].onclick = function(){
+            all(true);
+          }
+          btnrs[2].onclick = function(){
+            for(var i=0;i < iptrs.length;i++){
+              iptrs[i].checked == true ? iptrs[i].checked = false : iptrs[i].checked = true;
+            }
+          }
+      }
     </script>
   </head>
   <body>
