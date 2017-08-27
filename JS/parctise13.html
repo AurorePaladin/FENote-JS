@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      *{
+        padding: 0;
+        margin: auto 0;
+      }
+      div{
+        width: 75px;
+        height: 75px;
+        margin: 15px;
+        background-color: pink;
+      }
+    </style>
+    <script>
+    window.onload =function(){
+      function getClass(classname){
+        if(document.getElementsByClassName){
+          return document.getElementsByClassName(classname);
+        }
+        var arr = [];
+        var dom = document.getElementsByTagName("*");
+        for(i=0;i<dom.length;i++){
+          if(dom[i].className == classname){
+            arr.push(dom[i]);
+          }
+        }
+        return arr;
+      }
+      console.log(getClass("demo"));
+    }
+    </script>
+  </head>
+  <body>
+    <div class="demo"></div>
+    <div></div>
+    <div></div>
+    <div class="demo"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="demo"></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>
