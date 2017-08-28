@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<body>
+
+	<div id="container">
+		<canvas id="cavsElem">
+		</canvas>
+	</div>
+
+	<script>
+		(function(){
+			var canvas = document.querySelector( '#cavsElem' );
+			var ctx = canvas.getContext( '2d' );
+			canvas.width = 600;
+			canvas.height = 600;
+			canvas.style.border = "1px solid #000";
+			ctx.strokeStyle = 'blue';
+			ctx.lineWidth = 20;
+			ctx.beginPath();
+			ctx.moveTo(100,100);
+			ctx.lineTo(300,100);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.strokeStyle = 'yellow';
+			ctx.moveTo(100, 200);
+			ctx.lineTo(300, 200);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.strokeStyle = 'black';
+			ctx.moveTo(100, 300);
+			ctx.lineTo(300, 300);
+			ctx.stroke();
+		}());
+	</script>
+</body>
+</html>
