@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title></title>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			background-color: #f0f0f0;
+			overflow: hidden;
+		}
+	</style>
+	<script src="bower_components/konva/konva.min.js"></script>
+	<script src="js/ProgressBar.js"></script>
+</head>
+<body>
+	<div id="container">
+	</div>
+	<script>
+		var stage = new Konva.Stage({
+			container: 'container',
+			width: window.innerWidth,
+			height: window.innerHeight
+		});
+		var layer = new Konva.Layer();
+		stage.add(layer);
+		var cenX = stage.width() / 2;
+		var cenY = stage.height() / 2;
+		var option = {
+			x: 1/8 * stage.width(),
+			y: 1/2 * stage.height(),
+			w: 3/4 * stage.width(),
+			h: 1/12 * stage.height(),
+			fillStyle: 'red',
+			strokeStyle: 'blue'
+		var p = new ProgressBar( option );
+		p.addToGroupOrLayer( layer );
+		layer.draw();
+		p.changeValue( .5 );
+	</script>
+</body>
+</html>
