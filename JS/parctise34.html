@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function Product(){
+        this.name='Aurore';
+        this.description = ''
+        this.buy = function(){
+            alert('构造函数对象')
+        }
+    }
+        Product.prototype={
+            name:'Paladin',
+            buy:function(){
+                alert('原型对象')
+            }
+        }
+        var product = new Product()
+        console.log(product.buy())
+        delete product.buy
+        console.log(product.buy())
+
+</script>
