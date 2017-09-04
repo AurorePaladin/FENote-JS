@@ -1,0 +1,28 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+        function createPerson(){
+            var obj = new Object();
+            obj.name = '撼地者';
+            obj.HP=100;
+            obj.MP=100;
+            obj.technologys=['沟壑','图腾','余震','回音击'];
+            obj.attack = function(){
+                alert(obj.name+'发出回音击，导致对方666点伤害值')
+            };
+            obj.run = function(){
+            };
+            return obj;
+        }
+        var boy = createPerson();
+        boy.attack();
+    </script>
+</head>
+
+<body>
+</body>
+</html>
