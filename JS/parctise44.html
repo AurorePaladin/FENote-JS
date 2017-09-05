@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    function createPerson(original){
+    var clone = new Object(original);
+    var clone =function(original){}
+    clone.sayHi = function(){
+    alert("hi,"+original.name);
+    };
+    return clone;
+    }
+    var person = {
+    name: "Nicholas",
+    friends: ["Shelby", "Court", "Van"]
+    };
+    var anotherPerson = createPerson(person);
+    anotherPerson.sayHi();
+    </script>
+  </body>
+</html>
