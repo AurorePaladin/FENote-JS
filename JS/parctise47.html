@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script src='simple.js'></script>
+<script>
+    var Person = Class.extend({
+        init: function(age,name){
+            this.age = age;
+            this.name = name;
+        },
+        dance: function(){
+            alert("弹琴");
+        }
+    });
+    var Student = Person.extend({
+        init: function(age,name,height){
+            this._super(age,name);
+            this.height = height;
+        },
+        dance: function(){
+            this._super();
+            alert("写词");
+        }
+    });
+
+
+    var xiaozhang = new Student(24,'老王','121');
+    xiaozhang.dance();
+
+</script>
