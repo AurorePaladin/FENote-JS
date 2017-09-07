@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    *{margin:0;padding:0;}
+     ul,ol{list-style:none}
+     .box {
+         width: 730px;
+         height: 454px;
+         margin: 100px auto;
+         overflow: hidden;
+         position: relative;
+     }
+     .circle {
+         position: absolute;
+         left: 50%;
+         margin-left:-50px;
+         bottom:10px;
+     }
+     .circle span {
+         float: left;
+         width: 18px;
+         height: 18px;
+         border-radius: 50%;
+         background-color: pink;
+         text-align: center;
+         line-height: 18px;
+         margin-right: 10px;
+         cursor: pointer;
+     }
+    .circle .current {
+      background-color: blue;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="scroll">
+      <div class="slider">
+        <ul id="ul">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  window.onload =function(){
+    var scroll = document.getElementById("scroll");
+    var circle = document.createElement("div");
+    scroll.appendChild(circle);
+    circle.id = "circle";
+    var ul = document.getElementById("ul");
+    var lis = ul.children;
+    circle.setAttribute("class","circle");
+    for (var i = 0; i < lis.length; i++) {
+      var newSpan = document.createElement("span");
+      circle.appendChild(newSpan);
+      newSpan.innerHTML = i+1;
+    }
+
+    circle.children[0].setAttribute("class","current");
+  }
+</script>
