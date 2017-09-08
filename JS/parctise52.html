@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<p></p>
+</body>
+<script type="text/javascript">
+function on(id, type, fn){
+	var dom = document.getElementById(id);
+	if(dom.addEventListener ){
+		dom.addEventListener(type, fn, false);
+	}else if(dom.attachEvent){
+		dom.attachEvent('on' + type, fn);
+	}
+}
+function un(id, type, fn){
+	var dom = document.getElementById(id);
+	if(dom.removeEventListener){
+		dom.removeEventListener(type, fn);
+	}else if(dom.detachEvent){
+		dom.detachEvent(type, fn);
+	}
+}
+on('btn', 'click', function(){
+	document.getElementsByTagName('p')[0].innerHTML = '成功'
+});
+</script>
+</html>
