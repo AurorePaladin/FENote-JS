@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">变</button>
+<div id='div'></div>
+</body>
+<script src='itcast2.js'></script>
+<script type="text/javascript">
+    $$.click('btn', function(){
+        document.getElementsByTagName('div')[0].style.background = 'green'
+    });
+
+    $$.hover('div', function(){
+        this.style.background = 'blue'
+    },function(){
+        this.style.background = 'green'
+    });
+
+</script>
+</html>
