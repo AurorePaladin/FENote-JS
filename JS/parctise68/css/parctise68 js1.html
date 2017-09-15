@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        ul{list-style:none;}
+        img {vertical-align: top; }  
+        .box {
+            width: 600px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+            position: relative;
+            overflow: hidden;
+        }
+        .box ul li {
+            float: left;
+        }
+        .box ul {
+            width: 400%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="scroll">
+    <ul>
+        <li><img src="images/theron1.jpg" alt=""/></li>
+        <li><img src="images/theron2.jpg" alt=""/></li>
+        <li><img src="images/theron3.jpg" alt=""/></li>
+        <li><img src="images/theron4.jpg" alt=""/></li>
+        <li><img src="images/theron5.jpg" alt=""/></li>
+        <li><img src="images/theron6.jpg" alt=""/></li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    var scroll = document.getElementById("scroll");
+    var ul = scroll.children[0];
+    var num = 0;
+    var timer = null;
+    var leader = 0,target = 0;
+    timer = setInterval(autoPlay,1);
+    function autoPlay() {
+        target --;
+        target<=-1200 ? target = 0 : target;
+        leader = leader + (target - leader) / 10;
+        ul.style.left = leader + "px";
+    }
+    scroll.onmouseover = function() {
+        clearInterval(timer);
+    }
+    scroll.onmouseout = function() {
+        timer = setInterval(autoPlay,20);
+    }
+
+</script>
