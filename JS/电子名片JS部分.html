@@ -1,0 +1,19 @@
+
+$( "#social-share" ).click(function() {
+  $("#social").toggleClass("visible").slideToggle(200);
+});
+
+$(".username")
+  .hover(function addUser() {
+    $(this).text("+");
+  }, function() {
+    $(this).text("t");
+});
+
+$("#initial").click(function(e) {
+  $("#modal").toggleClass("visible").slideToggle(200);
+});
+
+$("#close").click(function() {
+  $("#modal").toggleClass("hidden").toggle();
+});
