@@ -1,0 +1,147 @@
+class Dial
+
+  raf: null
+  mdown: false
+
+  mPos:
+    x: 0
+    y: 0
+
+  elementPosition:
+    x: 0
+    y: 0
+
+  target: 0
+  steps: 60
+  radius: 150
+  maxDiff: 150
+  constraint: 360
+  currentVal: 0
+
+  constructor: (@$context) ->
+
+    @$knob = @$context.find ".knob"
+    @$handle = @$context.find ".handle"
+    @$progress = @$context.find ".progress"
+    @$center = @$context.find ".center"
+    @$textOutput = @$center.find "span"
+
+    @ctx = @$progress.get(0).getContext "2d"
+
+    knobOffset = @$knob.offset()
+
+    @elementPosition =
+      x: knobOffset.left
+      y: knobOffset.top
+
+    @centerX = @$progress.width()/2
+    @centerY = @$progress.height()/2
+
+    @canvasSize = @$progress.width()
+
+    @addEventListeners()
+    @draw()
+    return
+
+
+  addEventListeners: () ->
+    @$context.on "mousedown", @onMouseDown
+    @$context.on "mousemove", @onMouseMove
+    $("body").on "mouseup", @onMouseUp
+    return
+
+
+  setDialPosition: ->
+    @$knob.css
+      transform: "rotate(#{@target}deg)"
+
+    @$handle.css
+      transform: "rotate(-#{@target}deg)"
+
+    @draw()
+    return
+
+
+  draw: ()->
+
+    @$progress.get(0).height = @canvasSize
+    @$progress.get(0).width = @canvasSize
+
+    @ctx.save()
+    @ctx.translate @centerX, @centerY
+    @ctx.rotate (-90*(Math.PI/180))-(Math.PI * 2 / @steps)
+
+    for i in [0..@steps-1] by 1
+      @ctx.beginPath()
+      @ctx.rotate(Math.PI * 2 / @steps)
+
+
+      @ctx.lineWidth = 2
+      @ctx.lineTo(160, 0)
+      @ctx.lineTo(170, 0)
+      if i <= Math.floor @currentVal
+        @ctx.shadowBlur = 10
+        @ctx.strokeStyle = "#fff"
+        @ctx.shadowColor = "#fff"
+        if i > (@steps*0.75) and @currentVal > (@steps*0.75)
+          @ctx.strokeStyle = "#ff9306"
+          @ctx.shadowColor = "#ff9306"
+        if i > (@steps*0.88) and @currentVal > (@steps*0.88)
+          @ctx.strokeStyle = "#ff0606"
+          @ctx.shadowColor = "#ff0606"
+      else
+        @ctx.strokeStyle = "#444"
+        @ctx.shadowBlur = 0
+        @ctx.shadowColor = "#fff"
+
+      @ctx.stroke()
+
+    @ctx.restore()
+    return
+
+
+  setMousePosition: (event) ->
+    @mPos =
+      x: event.pageX - @elementPosition.x
+      y: event.pageY - @elementPosition.y
+
+    atan = Math.atan2 (@mPos.x - @radius), @mPos.y - @radius
+    target = (-atan / (Math.PI / 180) + 180)
+
+    diff = Math.abs target - @target
+
+    if diff < @maxDiff and target < @constraint
+      @target = target
+      @currentVal = @map(@target, 0, 360, 0, @steps)
+
+      @setDialPosition()
+      @updateOutput()
+    return
+
+  updateOutput: ()->
+    @$textOutput.text Math.round(@currentVal)
+    return
+
+
+  # Callbacks
+  onMouseDown: (event) =>
+    @mdown = true
+    return
+
+
+  onMouseUp: (event) =>
+    @mdown = false
+    return
+
+
+  onMouseMove: (event) =>
+    if @mdown then @setMousePosition event
+    return
+
+  map: (value, low1, high1, low2, high2) ->
+    return low2 + (high2 - low2) * (value - low1) / (high1 - low1)
+
+
+
+@$dial = $ ".dial"
+dial = new Dial @$dial
