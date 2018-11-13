@@ -30,6 +30,29 @@
         float:right;
         font-size: 12px;
       }
+      .ddddate{
+        position: fixed;
+        right:100px;
+        top:100px;
+        width: 200px;
+        height: 120px;
+        text-align: center;
+        background-color: orange;
+      }
+      .ddddate p{
+        font-size: 12px;
+        line-height: 30px;
+        color:black;
+      }
+      .ddddate span{
+        display: block;
+        width: 75px;
+        height: 75px;
+        background-color: grey;
+        line-height: 75px;
+        font-size: 30px;
+        color:gold;
+      }
     </style>
     <script>
       window.onload = function(){
@@ -43,8 +66,7 @@
             return false;
           }
           var newli = document.createElement("li");
-          newli.innerHTML = txt.value + "<a href='javascript:;'>删除</a>";
-          txt.value= "";
+
           var lis = ul.children;
           if (lis.length == 0) {
             ul.appendChild(newli);
@@ -52,21 +74,31 @@
           else {
             ul.insertBefore(newli,lis[0]);
           }
-
+          newli.innerHTML = txt.value + "<a href='javascript:;'>删除</a>";
+          txt.value= "";
+          var as = document.getElementsByTagName("a");
+          for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function(){
+              ul.removeChild(this.parentNode);
+          }
         }
-        var as = document.getElementsByTagName('a');
-        for (var i = 0; i < as.length; i++) {
-          as[i].onclick = function(){
-            ul.removeChild(this.parentNode);
-          }
-          }
       }
+      var date = new Date();
+      var time = document.getElementById("time");
+      var boys =time.children;
+      var arr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+      boys[0].innerHTML = date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"+" "+arr[date.getDay()];
+      boys[1].innerHTML = date.getDate();
+    }
     </script>
   </head>
   <body>
     <div class="box">
     微博：<textarea name="name" rows="8" cols="80"></textarea><button>发布</button>
     </div>
-
+    <div class="ddddate" id="time">
+      <p>12312321</p>
+      <span></span>
+    </div>
   </body>
 </html>

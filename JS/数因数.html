@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var num = parseInt(prompt("请任意输入一个数"));
+      var amount = 0;
+      for(i = 1; i <= num;i++){
+        if(num % i == 0 ){   //i每满足一次循环，amount就自增1
+          amount++;
+        }
+      }
+      console.log(amount);
+    </script>
+  </body>
+</html>

@@ -37,6 +37,13 @@
        background-position: 400px -300px;
      }
     </style>
+    <script>
+      window.onload = function (){
+        var sele = document.getElementById("sele");
+        var ico = document.getElementById("ico");
+        var star = document.getElementById("star");
+      }
+    </script>
   </head>
   <body>
     <div class="box">星座运势
@@ -57,7 +64,7 @@
             <option value="10">摩羯座 12/22 - 01/19 </option>
             <option value="11">水瓶座 01/ 20- 02/18 </option>
           </select>
-          <div class="star"></div>
+          <div class="star" id="star"></div>
         </div>
       </div>
       <div class="bot" id="content">双鱼座内容</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .advert {
+        width: 331px;
+        height: 195px;
+        background: url(../../FENote-CSS/CSS01/images/pro3.jpg) repeat;
+        position: relative;
+      }
+       .close#apd1{
+       position: absolute;
+       bottom:5px;
+       left:100px;
+     }
+      .close#apd2{
+      position: absolute;
+      bottom:5px;
+      left:120px;
+     }
+       .close#apd3{
+       position: absolute;
+       bottom:5px;
+       left:140px;
+     }
+       .close#apd4{
+       position: absolute;
+       bottom:5px;
+       left:160px;
+      }
+    </style>
+  </head>
+  <body>
+     <div class="advert" id="demo">
+        <button class="close" id="apd1">1</button>
+        <button class="close" id="apd2">2</button>
+        <button class="close" id="apd3">3</button>
+        <button class="close" id="apd4">4</button>
+    </div>
+    <div class="mm"></div>
+    <script type="text/javascript">
+      var demo = document.getElementById("demo");
+      var apd4 = document.getElementById("apd4");
+      apd4.onclick = function(){
+        demo.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

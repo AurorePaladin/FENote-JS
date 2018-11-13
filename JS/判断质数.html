@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var num = parseInt(prompt("请任意输入一个数"));
+      var amount = 0;
+      for (i = 1;i <= num;i++){
+        if(num % i ==0){
+          amount++;
+        }
+      }
+      if(amount == 2){
+        alert("这个数是质数");
+      }else{
+        alert("这个数不是质数");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/ItcastRect.js"></script>
+	</head>
+<body>
+
+	<div id="container">
+		<canvas id="cavsElem1">
+		</canvas>
+		<canvas id="cavsElem2">
+		</canvas>
+	</div>
+	<img src="" id="imgId" alt="">
+	<script>
+		(function(){
+			var canvas1 = document.querySelector( '#cavsElem1' );
+			var canvas2 = document.querySelector( '#cavsElem2' );
+			var ctx1 = canvas1.getContext( '2d' );
+			var ctx2 = canvas2.getContext( '2d' );
+			canvas1.width = 600;
+			canvas1.height = 600;
+			canvas1.style.border = "1px solid #000";
+			canvas2.width = 600;
+			canvas2.height = 600;
+			canvas2.style.border = "1px solid #000";
+			var rect = new ItcastRect({
+				x: 100,
+				y: 100,
+				w: 100,
+				h: 100,
+				opacity: .6,
+				rotation: 60,
+				scaleX: 1,
+				scaleY: 1,
+				fillStyle: 'purple',
+				strokeStyle: 'yellow'
+			});
+			rect.render( ctx1 );
+			setInterval(function() {
+				ctx1.clearRect( 0,  0 , canvas1.width, canvas1.height);
+				rect.x += 10;
+				rect.render(ctx1);
+				ctx2.drawImage(canvas1, 0, 0);
+			}, 100)
+		}());
+	</script>
+</body>
+</html>
